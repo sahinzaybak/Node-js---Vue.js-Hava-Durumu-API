@@ -21,6 +21,6 @@ localhost:8000
 ```
 <hr/>
 <div align="center">
-  <img src="https://images-na.ssl-images-amazon.com/images/I/51yMZooV7GL.png" width="80">
-  <h3><i>Developer by <p> Şahin ZAYBAK</p> </i></h3>
+  <img src="https://images-na.ssl-images-amazon.com/images/I/51yMZooV7GL.png" width="60">
+  <h3><i>Developer by Şahin ZAYBAK </i></h3>
 </div>
