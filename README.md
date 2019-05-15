@@ -19,8 +19,7 @@ npm install express --save
 nodemon app.js
 localhost:8000
 ```
-
-<div align="center" style="color:red">
-<br>
-<h1>Developer by Şahin ZAYBAK</h1>
+<hr/>
+<div align="center">
+<h3>Developer by Şahin ZAYBAK</h3>
 </div>
