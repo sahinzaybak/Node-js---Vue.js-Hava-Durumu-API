@@ -20,7 +20,7 @@ nodemon app.js
 localhost:8000
 ```
 
-<div align="center">
+<div align="center" style="color:red">
 <br>
-<i style="color:red">Developer by Şahin ZAYBAK</i>
+<i>Developer by Şahin ZAYBAK</i>
 </div>
