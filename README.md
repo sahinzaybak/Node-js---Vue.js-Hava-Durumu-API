@@ -15,5 +15,5 @@ npm install express --save
 ### Run the Project
 ```sh
 nodemon app.js
-localhost:8080
+localhost:8000
 ```
