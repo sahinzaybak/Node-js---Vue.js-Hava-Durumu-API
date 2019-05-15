@@ -22,5 +22,5 @@ localhost:8000
 
 <div align="center" style="color:red">
 <br>
-<i>Developer by Şahin ZAYBAK</i>
+<h1>Developer by Şahin ZAYBAK</h1>
 </div>
