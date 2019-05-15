@@ -9,7 +9,7 @@
  
 ### Installation
 ```sh
-npm install --save
+npm install express --save
 ```
 
 ### Run the Project
