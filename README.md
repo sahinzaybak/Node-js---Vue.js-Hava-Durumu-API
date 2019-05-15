@@ -1,4 +1,4 @@
-# Gri Creative Air Task
+# Weather Forecast App
 
 ### Components
   - Node.js
