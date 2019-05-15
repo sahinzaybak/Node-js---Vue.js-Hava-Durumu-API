@@ -1,0 +1,110 @@
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-image: url("https://geomarketing.com/wp-content/uploads/2018/05/Summer-Weather-and-Temperature.jpg");
+  background-size: cover;
+}
+
+.title {
+  color: #767475;
+  opacity: 0.8;
+  font-size: 23px;
+}
+.wrapper {
+  .country {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+    &__item {
+      position: relative;
+      line-height: 1.5;
+      background-color: #ffffff;
+      box-shadow: #bababaa6 1px 26px 60px 1px;
+      border-top-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      top: 0;
+      transition: all 0.5s;
+      font-weight: 500;
+      cursor: pointer;
+      &-name {
+        font-size: 38px;
+        color: #f4408b;
+      }
+      &-air {
+        font-size: 20px;
+      }
+      &-temp {
+        font-size: 27px;
+        color: #f3507f;
+      }
+      &-wind {
+        font-size: 27px;
+        color: #f3507f;
+      }
+      &:hover {
+        top: -50px;
+      }
+      &-link {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 50px;
+      }
+      &-day {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        background-color: #efefef;
+        padding: 5px 32px;
+        color: #969696;
+        margin: 0 auto;
+      }
+    }
+    &-title {
+      color: red;
+    }
+  }
+  &__detail {
+    &-title {
+      font-size: 7vh;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 120px;
+      text-shadow: black 1px 1px 60px;
+      .small {
+        color: #f42974;
+      }
+    }
+  }
+}
+
+.gen {
+  position: absolute;
+  width: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  &__item {
+    padding: 67px 22px;
+    background-color: white;
+    box-shadow: #bababaa6 1px 26px 60px 1px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-size: 23px;
+    line-height: 1.6;
+    font-weight: 600;
+    &-title {
+      color: #f03178;
+    }
+  }
+}

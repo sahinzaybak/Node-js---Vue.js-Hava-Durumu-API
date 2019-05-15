@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+    <script src="https://unpkg.com/vue@2.5.9/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather Forecast</title>
+</head>
+
+<body>
+    <div class="wrapper" id="app">
+        <div class="country">
+            <div class="country__item" v-for="items in AirCountryList">
+                <a :href="'weather/' + items.name" class="country__item-link">
+                    <div class="country__item-day">Today</div>
+                    <h1 class="country__item-name">{{items.name}}</h1>
+                    <p class="country__item-temp"><span class="title">Air : </span>{{items.weather[0].main}}</p>
+                    <p class="country__item-temp"><span class="title">Temparature : </span>{{items.main.temp}}</p>
+                    <p class="country__item-wind"><span class="title">Wind Speed: </span> {{items.wind.speed}} </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            countries: ["London", "Turkey", "Brazil", "Italy", "Spain"],
+            AirCountryList: []
+        },
+        created() {
+            this.countries.forEach(element => { //İstediğim 5 ükeyi bir diziye attım ve dizi içerisinde döndüm.
+                axios.post("/AllList/" + element) //RouterController'deki AllList postuma şehir adı parametresini gönderdim.
+                    .then((res => { // gelen hava durumu bilgilerini ,
+                        this.AirCountryList.push(res.data) // tek bir dizide topladım ve vue.js ile ekranda gösterdim.
+                    }))
+            });
+        }
+    });
+
+</script>
+
+</html>

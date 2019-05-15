@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">
+    <script src="https://unpkg.com/vue@2.5.9/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather Forecast Detail</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="gen">
+            <div class="wrapper__detail">
+                <h1 class="wrapper__detail-title">
+                    <span class="small">
+                        {{sehir}}
+                    </span>
+                    5 day weather forecast
+                </h1>
+            </div>
+
+            <div class="detail">
+                <div class="detail__item" v-for="items in softData">
+                    {{items.length}}
+                    <h1 class="detail__item-date">
+                        <span class="detail__item-title">Date : </span>
+                        {{items.dt_txt}}
+                    </h1>
+                    <p class="detail__item-temp">
+                        <span class="detail__item-title">Temp : </span>
+                        {{items.main.temp}}
+                    </p>
+                    <p class="detail__item-wind">
+                        <span class="detail__item-title">Wind Speed : </span>
+                        {{items.wind.speed}}
+                    </p>
+                    <p class="detail__item-clouds">
+                        <span class="detail__item-title">Cloud : </span>
+                        {{items.clouds.all}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            sehir: '',
+            data: [],
+            softData: [],
+            date: []
+        },
+        created() {
+            axios.post("/countryDetail") //RouterController'daki countryDetail Postuma gidiyorum
+                .then((res => { // Postuma gittim, geldim ve artık istediğim ülkenin verilerini burada kullanıp, vue ile gösterebilirim.
+                    this.sehir = res.data.city.name;
+                    this.data = res.data.list;
+                    this.data.forEach(element => {
+                        this.date.forEach(element2 => {
+                            if (element.dt_txt == element2) // Diziye attığım tarihler ile API'deki tarihler uyuşuyorsa diziye atıp artık gerçek, ham bilgilerimi vue ile ekrana yazıyorum.
+                                this.softData.push(element)
+                        });
+                    });
+                })).catch((error) => { //Eğer url'ye girilen tanımlı bir ülke yoksa 404'e yönlendir.
+                    window.location = "/404"
+                });
+
+            var dates = new Date();
+            var nowDate = dates.getDate() - 1;
+            for (let index = 0; index < 5; index++) { //Şimdiki tarihten 5 gün sonra..
+                nowDate++
+                this.date.push("2019-05-" + nowDate + " 18:00:00") 
+                //5 günüde diziye atıyorum.
+                //API'de bütün tarihler saat saat girilmişti. Mecburen bilgileri getirirken belli bir saate göre getirmeliydim 18:00 ı seçtim bende, her gün 18:00 saatindeki hava durumlarını getiriyor.
+                //* API KAYNAKLI SORUN
+            }
+        }
+    });
+
+</script>
+
+</html>
