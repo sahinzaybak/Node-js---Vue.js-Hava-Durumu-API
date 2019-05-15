@@ -21,5 +21,5 @@ localhost:8000
 ```
 <hr/>
 <div align="center">
-<h3>Developer by Şahin ZAYBAK</h3>
+  <h3><i>Developer by Şahin ZAYBAK </i></h3>
 </div>
