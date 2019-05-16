@@ -15,7 +15,7 @@
 <body>
     <div class="wrapper" id="app">
         <div class="country">
-            <div class="country-item" v-for="items in AirCountryList">
+            <div class="country-item" v-for="items in airCountryList">
                 <a :href="'weather/' + items.name" class="country-item__link">
                     <div class="country-item__day">Today</div>
                     <h1 class="country-item__name">{{items.name}}</h1>
@@ -33,13 +33,13 @@
         el: '#app',
         data: {
             countries: ["London", "Turkey", "Brazil", "Italy", "Spain"],
-            AirCountryList: []
+            airCountryList: []
         },
         created() {
             this.countries.forEach(element => { //İstediğim 5 ükeyi bir diziye attım ve dizi içerisinde döndüm.
                 axios.post("/AllList/" + element) //RouterController'deki AllList postuma şehir adı parametresini gönderdim.
                     .then((res => { // gelen hava durumu bilgilerini ,
-                        this.AirCountryList.push(res.data) // tek bir dizide topladım ve vue.js ile ekranda gösterdim.
+                        this.airCountryList.push(res.data) // tek bir dizide topladım ve vue.js ile ekranda gösterdim.
                     }))
             });
         }
