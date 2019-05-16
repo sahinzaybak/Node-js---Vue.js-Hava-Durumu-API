@@ -4,6 +4,7 @@ Node.js ve Vue.js kullanarak yapmış olduğum hava durumu uygulaması. https://
 
 ### Components
   - Node.js
+  - BEM Methodology
   - Express.js
   - Vue.js
   - jQuery
