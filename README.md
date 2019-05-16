@@ -1,4 +1,4 @@
-# Gri Creative Air Task
+# Weather Forecas Air
 
 Node.js ve Vue.js kullanarak yapmış olduğum hava durumu uygulaması. https://openweathermap.org/appid sitesindeki API'yi kullanarak 5 ülkenin şu anki hava durumu bilgilerini listeletiyorum, ve istediğimiz ülkeye tıklayarak detay sayfasına gittiğimizde, o ülkeye ait 5 günlük hava durumu tahminini detaylı olarak görebiliyoruz.
 
