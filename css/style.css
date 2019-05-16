@@ -21,7 +21,14 @@ body {
   transform: translateY(-50%);
   top: 50%;
 }
-.wrapper .country__item {
+@media only screen and (max-width: 600px) {
+  .wrapper .country {
+    display: block;
+    transform: none;
+    top: inherit;
+  }
+}
+.wrapper .country-item {
   position: relative;
   line-height: 1.5;
   background-color: #ffffff;
@@ -33,31 +40,42 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-.wrapper .country__item-name {
+@media only screen and (max-width: 600px) {
+  .wrapper .country-item {
+    width: 80%;
+    margin: 20px auto 20px;
+  }
+}
+.wrapper .country-item__name {
   font-size: 38px;
   color: #f4408b;
 }
-.wrapper .country__item-air {
+.wrapper .country-item__air {
   font-size: 20px;
 }
-.wrapper .country__item-temp {
+.wrapper .country-item__temp {
   font-size: 27px;
   color: #f3507f;
 }
-.wrapper .country__item-wind {
+.wrapper .country-item__wind {
   font-size: 27px;
   color: #f3507f;
 }
-.wrapper .country__item:hover {
+.wrapper .country-item:hover {
   top: -50px;
 }
-.wrapper .country__item-link {
+.wrapper .country-item__link {
   display: block;
   position: relative;
   overflow: hidden;
   padding: 50px;
 }
-.wrapper .country__item-day {
+@media only screen and (max-width: 600px) {
+  .wrapper .country-item__link {
+    padding: 30px;
+  }
+}
+.wrapper .country-item__day {
   position: absolute;
   top: 0px;
   right: 0;
@@ -69,7 +87,7 @@ body {
 .wrapper .country-title {
   color: red;
 }
-.wrapper__detail-title {
+.wrapper-detail__title {
   font-size: 7vh;
   color: white;
   font-weight: 600;
@@ -77,7 +95,12 @@ body {
   margin-bottom: 120px;
   text-shadow: black 1px 1px 60px;
 }
-.wrapper__detail-title .small {
+@media only screen and (max-width: 600px) {
+  .wrapper-detail__title {
+    margin: 60px 0;
+  }
+}
+.wrapper-detail__title .small {
   color: #f42974;
 }
 
@@ -87,13 +110,24 @@ body {
   transform: translateY(-50%);
   top: 50%;
 }
+@media only screen and (max-width: 600px) {
+  .gen {
+    top: inherit;
+    transform: none;
+  }
+}
 
 .detail {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.detail__item {
+@media only screen and (max-width: 600px) {
+  .detail {
+    display: block;
+  }
+}
+.detail-item {
   padding: 67px 22px;
   background-color: white;
   box-shadow: #bababaa6 1px 26px 60px 1px;
@@ -103,6 +137,13 @@ body {
   line-height: 1.6;
   font-weight: 600;
 }
-.detail__item-title {
+.detail-item__title {
   color: #f03178;
+}
+@media only screen and (max-width: 600px) {
+  .detail-item {
+    padding: 12px 22px;
+    width: 80%;
+    margin: 20px auto;
+  }
 }

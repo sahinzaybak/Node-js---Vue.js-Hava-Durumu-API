@@ -20,7 +20,12 @@ body {
     width: 100%;
     transform: translateY(-50%);
     top: 50%;
-    &__item {
+    @media only screen and (max-width: 600px) {
+      display: block;
+      transform: none;
+      top: inherit;
+    }
+    &-item {
       position: relative;
       line-height: 1.5;
       background-color: #ffffff;
@@ -31,31 +36,38 @@ body {
       transition: all 0.5s;
       font-weight: 500;
       cursor: pointer;
-      &-name {
+      @media only screen and (max-width: 600px) {
+        width: 80%;
+        margin: 20px auto 20px;
+      }
+      &__name {
         font-size: 38px;
         color: #f4408b;
       }
-      &-air {
+      &__air {
         font-size: 20px;
       }
-      &-temp {
+      &__temp {
         font-size: 27px;
         color: #f3507f;
       }
-      &-wind {
+      &__wind {
         font-size: 27px;
         color: #f3507f;
       }
       &:hover {
         top: -50px;
       }
-      &-link {
+      &__link {
         display: block;
         position: relative;
         overflow: hidden;
         padding: 50px;
+        @media only screen and (max-width: 600px) {
+          padding: 30px;
+        }
       }
-      &-day {
+      &__day {
         position: absolute;
         top: 0px;
         right: 0;
@@ -69,14 +81,17 @@ body {
       color: red;
     }
   }
-  &__detail {
-    &-title {
+  &-detail {
+    &__title {
       font-size: 7vh;
       color: white;
       font-weight: 600;
       text-align: center;
       margin-bottom: 120px;
       text-shadow: black 1px 1px 60px;
+      @media only screen and (max-width: 600px) {
+        margin: 60px 0;
+      }
       .small {
         color: #f42974;
       }
@@ -89,12 +104,19 @@ body {
   width: 100%;
   transform: translateY(-50%);
   top: 50%;
+  @media only screen and (max-width: 600px) {
+    top:inherit;
+    transform:none;
+  }
 }
 .detail {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  &__item {
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+  &-item {
     padding: 67px 22px;
     background-color: white;
     box-shadow: #bababaa6 1px 26px 60px 1px;
@@ -103,8 +125,13 @@ body {
     font-size: 23px;
     line-height: 1.6;
     font-weight: 600;
-    &-title {
+    &__title {
       color: #f03178;
+    }
+    @media only screen and (max-width: 600px) {
+      padding: 12px 22px;
+      width: 80%;
+      margin: 20px auto;
     }
   }
 }

@@ -23,9 +23,6 @@ module.exports.countryDetail = function(req, res) { //POST ile 'de yukarıdan al
     .then(resp => resp.json())
     .then(function(data) {
       res.send(data); //Girdiğim ülkeye ait bütün datamı'da res.send ile yine detail.html sayfama gönderiyorum. --> detail.html
-      if (data.message = "city not found") {
-        console.log("Böyle bir ülke yok");
-      }
     });
     
 };

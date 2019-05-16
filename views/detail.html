@@ -15,8 +15,8 @@
 <body>
     <div id="app">
         <div class="gen">
-            <div class="wrapper__detail">
-                <h1 class="wrapper__detail-title">
+            <div class="wrapper-detail">
+                <h1 class="wrapper-detail__title">
                     <span class="small">
                         {{sehir}}
                     </span>
@@ -25,22 +25,22 @@
             </div>
 
             <div class="detail">
-                <div class="detail__item" v-for="items in softData">
+                <div class="detail-item" v-for="items in softData">
                     {{items.length}}
-                    <h1 class="detail__item-date">
-                        <span class="detail__item-title">Date : </span>
+                    <h1 class="detail-item__date">
+                        <span class="detail-item__title">Date : </span>
                         {{items.dt_txt}}
                     </h1>
-                    <p class="detail__item-temp">
-                        <span class="detail__item-title">Temp : </span>
+                    <p class="detail-item__temp">
+                        <span class="detail-item__title">Temp : </span>
                         {{items.main.temp}}
                     </p>
-                    <p class="detail__item-wind">
-                        <span class="detail__item-title">Wind Speed : </span>
+                    <p class="detail-item__wind">
+                        <span class="detail-item__title">Wind Speed : </span>
                         {{items.wind.speed}}
                     </p>
-                    <p class="detail__item-clouds">
-                        <span class="detail__item-title">Cloud : </span>
+                    <p class="detail-item__clouds">
+                        <span class="detail-item__title">Cloud : </span>
                         {{items.clouds.all}}
                     </p>
                 </div>
