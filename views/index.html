@@ -18,10 +18,10 @@
             <div class="country-item" v-for="item in airCountryList">
                 <a :href="'weather/' + item.name" class="country-item__link">
                     <div class="country-item__day">Today</div>
-                    <h1 class="country-item__name">{{items.name}}</h1>
-                    <p class="country-item__temp"><span class="title">Air : </span>{{items.weather[0].main}}</p>
-                    <p class="country-item__temp"><span class="title">Temparature : </span>{{items.main.temp}}</p>
-                    <p class="country-item__wind"><span class="title">Wind Speed: </span> {{items.wind.speed}} </p>
+                    <h1 class="country-item__name">{{item.name}}</h1>
+                    <p class="country-item__temp"><span class="title">Air : </span>{{item.weather[0].main}}</p>
+                    <p class="country-item__temp"><span class="title">Temparature : </span>{{item.main.temp}}</p>
+                    <p class="country-item__wind"><span class="title">Wind Speed: </span> {{item.wind.speed}} </p>
                 </a>
             </div>
         </div>

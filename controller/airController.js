@@ -1,2 +1,2 @@
-const airControlModel = require("../model/airList");
+let airControlModel = require("../model/airList");
 module.exports.all = airControlModel.AllList;
